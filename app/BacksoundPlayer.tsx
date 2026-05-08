@@ -40,14 +40,12 @@ export default function BacksoundPlayer() {
     audio.play().catch(() => {});
 
     const handleGlobalClick = (e: MouseEvent) => {
-      // Un-mute backsound saat interaksi pertama
       if (audio.muted) {
         audio.muted = false;
         audio.play().catch(() => {});
         setPlaying(true);
       }
 
-      // Bunyi sfx kalau yang diklik adalah button, a, atau anaknya
       const target = e.target as HTMLElement;
       const isClickable =
         target.closest("button") ||
